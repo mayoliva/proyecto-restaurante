@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apertura de Caja</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/caja.css' %}">
+    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
+</head>
+
+<body>
+    <div class="corner top-left">CAJA: 1</div>
+    <div class="corner top-right">Nombre y Apellido</div>
+
+    <div class="logo-container">
+        <img src="{% static 'img/loguito.png' %}" alt="Brunette Restaurante" class="logo">
+        <button class="green-button" onclick="showModal()">Apertura de Caja</button>
+        <button class="red-button" onclick="logout()">Cerrar Sesión</button>
+    </div>
+
+    <!-- Modal de Apertura de Caja -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Apertura de Caja</h2>
+            <p>Fecha Inicio: <span id="fechaHora"></span></p>
+            <p>Monto Inicial: $50,000</p>
+            <p>¿Desea continuar con la apertura de caja?</p>
+            <button onclick="redirectToMenuCaja()" class="green-button">Aceptar</button>
+            <button onclick="closeModal()" class="red-button">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="{% static 'js/caja.js' %}"></script>
+</body>
+
+</html>

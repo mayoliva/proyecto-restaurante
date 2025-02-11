@@ -33,7 +33,19 @@
             <button onclick="closeModal()" class="red-button">Cancelar</button>
         </div>
     </div>
+
     <script src="{% static 'js/menu.js' %}"></script>
+
+    <!-- funciones de redirección -->
+    <script>
+        function redirectionVentas() {
+            window.location.href = "{% url 'ventas' %}";
+        }
+
+        function redirectionPedidos() {
+            window.location.href = "{% url 'pedidos' %}";
+        }
+    </script>
 </body>
 
 </html>

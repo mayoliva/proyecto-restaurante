@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brunette Restaurante</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/ventas.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <button class="back-button">&larr;</button>
+            <input type="text" id="searchBar" class="search-bar" placeholder="Buscar productos o fecha..."
+                onkeyup="filterTable()">
+            <input type="date" id="datePicker" class="date-picker" onchange="filterByDate()">
+        </header>
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}" alt="Brunette Restaurante">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>N° Factura</th>
+                    <th>N°</th>
+                    <th>Descripcion</th>
+                    <th>Precio</th>
+                    <th>Fecha</th>
+                    <th>Forma de pago</th>
+                </tr>
+            </thead>
+            <tbody id="menuTable">
+                <!-- Aquí se agregarán las filas de productos -->
+                <tr>
+                    <td>001</td>
+                    <td>1</td>
+                    <td data-type="hamburguesa" data-name="triple">Hamburguesa (Triple)</td>
+                    <td data-price="3000">$3000</td>
+                    <td data-date="2024-12-01">2024-12-01</td>
+                    <td>Efectivo</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>2</td>
+                    <td data-type="hamburguesa" data-name="doble">Hamburguesa (Doble)</td>
+                    <td data-price="2500">$2500</td>
+                    <td data-date="2024-12-02">2024-12-02</td>
+                    <td>Tarjeta</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>3</td>
+                    <td data-type="hamburguesa" data-name="simple">Hamburguesa (Simple)</td>
+                    <td data-price="2000">$2000</td>
+                    <td data-date="2024-12-01">2024-12-01</td>
+                    <td>Efectivo</td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>4</td>
+                    <td data-type="sandwich" data-name="milanesa">Sandwich (Milanesa)</td>
+                    <td data-price="2000">$2000</td>
+                    <td data-date="2024-12-03">2024-12-03</td>
+                    <td>Tarjeta</td>
+                </tr>
+                <tr>
+                    <td>005</td>
+                    <td>5</td>
+                    <td data-type="sandwich" data-name="pollo">Sandwich (Pollo)</td>
+                    <td data-price="2000">$2000</td>
+                    <td data-date="2024-12-02">2024-12-02</td>
+                    <td>Efectivo</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="total">
+            <span>Total :</span>
+            <span id="total-amount">$0</span>
+        </div>
+    </div>
+    <script src="{% static 'js/ventas.js' %}"></script>
+</body>
+
+</html>

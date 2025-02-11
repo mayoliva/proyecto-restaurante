@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cierre de Caja</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/cierre.css' %}">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Cierre de Caja</h1>
+    </div>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>USUARIO</th>
+                    <th>FECHA APERTURA</th>
+                    <th>SALDO INICIAL</th>
+                    <th>PRODUCTOS</th>
+                    <th>VENTAS</th>
+                    <th>SALDO CAJA</th>
+                    <th>ESTADO</th>
+                </tr>
+            </thead>
+            <tbody id="cierreTable">
+                <!-- Aquí puedes agregar filas con datos -->
+                <tr>
+                    <td>Juan Pérez</td>
+                    <td>2024-12-19 09:00</td>
+                    <td>$50,000</td>
+                    <td>25</td>
+                    <td>$75,000</td>
+                    <td>$125,000</td>
+                    <td>Abierta</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="apply-button" onclick="applyChanges()">APLICAR CAMBIOS</button>
+    </div>
+    <script src="{% static 'js/cierre.js' %}"></script>
+</body>
+
+</html>

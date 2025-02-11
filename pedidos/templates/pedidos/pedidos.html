@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/pedidos.css' %}">
+    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
+</head>
+
+<body>
+    <!-- Logo y Barra de navegación -->
+    <header class="header">
+        <img src="{% static 'img/loguito.png' %}" alt="Brunette Restaurante" class="logo">
+        <div class="nav-bar">
+            <button class="back-button" onclick="goBack()">&#60;</button>
+            <img src="{% static 'img/pedido.png' %}" alt="Icono Pedido" class="pedido-icon">
+        </div>
+    </header>
+
+    <!-- Buscador y Filtro -->
+    <section class="search-section">
+        <input type="text" placeholder="Buscar..." id="busqueda" class="search-bar">
+        <button class="filter-button">🔍</button>
+    </section>
+
+    <!-- Tabla de Pedidos -->
+    <section class="orders-section">
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>Cantidad</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody id="productList">
+                <!-- Aquí se generarán los productos dinámicamente -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Total</td>
+                    <td id="totalAmount">$0</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <!-- Métodos de Pago -->
+    <section class="payment-section">
+        <h2>Confirmar Método de Pago</h2>
+        <button class="payment-button">Efectivo</button>
+        <button class="payment-button">Transferencia</button>
+        <button class="payment-button">Tarjeta</button>
+    </section>
+
+    <!-- Confirmación -->
+    <section class="confirmation-section">
+        <p>¿Deseas continuar con agregar al carrito?</p>
+        <button onclick="confirmOrder()" class="confirm-button">Confirmar</button>
+        <button onclick="cancelOrder()" class="cancel-button">Cancelar</button>
+    </section>
+
+    <script src="{% static 'js/pedidos.js' %}"></script>
+</body>
+
+</html>
