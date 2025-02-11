@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz de Caja</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+</head>
+
+<body>
+    <div class="header">
+        <div class="left">CAJA: 1</div>
+        <div class="right">NOMBRE Y APELLIDO</div>
+    </div>
+    <div class="main">
+        <div class="home-button">&#8962;</div> <!-- Icono de casa -->
+        <div class="buttons">
+            <button type="button" onclick="redirectionVentas()">VENTAS</button>
+            <button type="button" onclick="redirectionPedidos()">PEDIDOS</button>
+            <button id="stock">STOCK</button>
+            <button id="cerrar-caja" class="danger" onclick="showCloseModal()">CERRAR CAJA</button>
+        </div>
+    </div>
+    <div id="closeModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>CAJA 1</h2>
+            <p>FECHA INICIO: <span id="fechaInicio"></span></p>
+            <p>NOMBRE Y APELLIDO</p>
+            <p>¿Desea continuar con el cierre de caja?</p>
+            <button onclick="acceptClose()" class="green-button">Aceptar</button>
+            <button onclick="closeModal()" class="red-button">Cancelar</button>
+        </div>
+    </div>
+    <script src="{% static 'js/menu.js' %}"></script>
+</body>
+
+</html>
